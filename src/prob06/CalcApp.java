@@ -13,7 +13,50 @@ public class CalcApp {
 		while( true ) {
 			
 			/*  코드를 완성 합니다 */
+			System.out.print(">>");
+			String expression = scanner.nextLine();
 			
+			if(expression.equals("quit")){
+				break;
+			}
+//			스페이스로 분리해낸다
+			String[] tokens = expression.split(" ");
+			
+			switch(tokens[1]){
+			
+			case "+":{
+				Add a = new Add();
+				a.setValue(tokens[0], tokens[2]);
+				int b = a.Add();
+				System.out.println(b);
+				break;
+			}
+			
+			case "-":{
+				Sub a = new Sub();
+				a.setValue(tokens[0], tokens[2]);
+				int b = a.sub();
+				System.out.println(b);
+				break;
+			}
+			
+			case "*":{
+				Mul a = new Mul();
+				a.setValue(tokens[0], tokens[2]);
+				int b = a.mul();
+				System.out.println(b);
+				break;
+			}
+			
+			case "/":{
+				Div a = new Div();
+				a.setValue(tokens[0], tokens[2]);
+				int b = a.div();
+				System.out.println(b);
+				break;
+			}
+			
+			}
 		}
 		
 		scanner.close();
